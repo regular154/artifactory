@@ -6,8 +6,7 @@ pipeline {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
                     echo "${env.SANDBOX_KONG_ADMIN}"
                     echo "${env.WORKSPACE}"
-                    echo "pwd"
-                    echo "ls"
+                    echo "$PWD"
                 }
             }
         }
