@@ -25,7 +25,7 @@ pipeline {
                         spec: """{
                             "files": [
                                 {
-                                    "pattern": "${env.WORKSPACE}/*.md",
+                                    "pattern": "*.md",
                                     "target": "/libs-release-local/1.0.0",
                                     "props": "vcs.repository=testValue",
                                     "flat": "true",
