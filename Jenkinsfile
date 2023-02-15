@@ -12,7 +12,7 @@ pipeline {
             steps {
                 rtServer (
                     id: "localArtifactory",
-                    url: "http://localhost:8082/artifactory",
+                    url: "http://localhost:8081/artifactory",
                     credentialsId: "my-jfrog-credentials",
                     timeout: 300
                 )
