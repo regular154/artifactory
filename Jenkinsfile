@@ -26,7 +26,7 @@ pipeline {
                             "files": [
                                 {
                                     "pattern": "*.md",
-                                    "target": "/libs-release-local/1.0.0",
+                                    "target": "/libs-release-local/test/1.0.0",
                                     "props": "vcs.repository=testValue",
                                     "flat": "true",
                                     "recursive": "true"
