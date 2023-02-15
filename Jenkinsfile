@@ -2,20 +2,11 @@ pipeline {
     agent any
     stages {
         stage('test') {
-            steps {
-                withEnv(["HOME=${env.WORKSPACE}"]) {
-                    echo "${env.SANDBOX_KONG_ADMIN}"
-                    echo "${env.WORKSPACE}"
-                    echo "$PWD"
-                }
-            }
-        }
-        stage('test2') {
             steps {                
                 echo "${env.SANDBOX_KONG_ADMIN}"
                 echo "${env.WORKSPACE}"
                 sh "pwd"
-                sh "python --version"
+                sh "ls"
             }
         }
         stage('Artifactory push') {
