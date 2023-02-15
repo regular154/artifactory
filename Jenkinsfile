@@ -11,31 +11,23 @@ pipeline {
         }
         stage('Artifactory push') {
             steps {
-                rtServer (
-                    id: "localArtifactory",
-                    url: "http://172.17.0.2:8081",
-                    credentialsId: "my-jfrog-credentials",
-                    timeout: 300
-                )
                 rtBuildInfo (
                     captureEnv: true
                 )
                 rtUpload (
-                    serverId: "localArtifactory",
+                    serverId: "my-jfrog-instance",
                         spec: """{
                             "files": [
                                 {
                                     "pattern": "*.md",
-                                    "target": "/artifactory/generic/test/100/",
-                                    "props": "vcs.repository=testValue",
-                                    "flat": "true",
-                                    "recursive": "true"
+                                    "target": "/generic/test/100/",
+                                    "props": "vcs.repository=testValue"  
                                 }
                             ]
                         }"""
                 )
                 rtPublishBuildInfo (
-                    serverId: "localArtifactory"
+                    serverId: "my-jfrog-instance"
                 )
             }
         }
