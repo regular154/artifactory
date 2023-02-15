@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'python:alpine3.16'
+        }
+    }
     stages {
         stage('test') {
             steps {
@@ -14,7 +18,8 @@ pipeline {
             steps {                
                 echo "${env.SANDBOX_KONG_ADMIN}"
                 echo "${env.WORKSPACE}"
-                echo "$PWD"                
+                sh "pwd"
+                sh "python --version"
             }
         }
         stage('Artifactory push') {
