@@ -26,7 +26,7 @@ pipeline {
                             "files": [
                                 {
                                     "pattern": "*.md",
-                                    "target": "/artifactory/libs-release-local/test/1.0.0",
+                                    "target": "/artifactory/libs-release-local/test/100/",
                                     "props": "vcs.repository=testValue",
                                     "flat": "true",
                                     "recursive": "true"
