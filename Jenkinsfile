@@ -4,8 +4,14 @@ pipeline {
         stage('test') {
             steps {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
+                    echo "env.SANDBOX_KONG_ADMIN"
                     echo "${env.SANDBOX_KONG_ADMIN}"
+                    echo "env.WORKSPACE:"
                     echo "${env.WORKSPACE}"
+                    echo "pwd:"
+                    pwd
+                    echo "ls"
+                    ls
                 }
             }
         }
