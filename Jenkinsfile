@@ -7,8 +7,6 @@ pipeline {
                 echo "${env.WORKSPACE}"
                 sh "pwd"
                 sh "ls"
-                sh "zip art.zip README.md"
-                sh "ls"
             }
         }
         stage('Artifactory push') {
@@ -28,7 +26,7 @@ pipeline {
                             "files": [
                                 {
                                     "pattern": "*.md",
-                                    "target": "/artifactory/libs-release-local/test/100/",
+                                    "target": "/artifactory/generic/test/100/",
                                     "props": "vcs.repository=testValue",
                                     "flat": "true",
                                     "recursive": "true"
