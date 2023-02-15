@@ -10,6 +10,13 @@ pipeline {
                 }
             }
         }
+        stage('test2') {
+            steps {                
+                echo "${env.SANDBOX_KONG_ADMIN}"
+                echo "${env.WORKSPACE}"
+                echo "$PWD"                
+            }
+        }
         stage('Artifactory push') {
             steps {
                 rtServer (
