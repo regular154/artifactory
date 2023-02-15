@@ -7,6 +7,8 @@ pipeline {
                 echo "${env.WORKSPACE}"
                 sh "pwd"
                 sh "ls"
+                sh "zip art.zip README.md"
+                sh "ls"
             }
         }
         stage('Artifactory push') {
