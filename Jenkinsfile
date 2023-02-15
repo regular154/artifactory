@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:alpine3.16'
-        }
-    }
+    agent any
     stages {
         stage('test') {
             steps {
